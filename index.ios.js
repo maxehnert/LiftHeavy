@@ -1,8 +1,10 @@
 'use strict';
 
 var React = require('react-native');
-var Featured = require('./Featured');
-var Search = require('./Search');
+var Home = require('./Home');
+var History = require('./History');
+var Graph = require('./Graph');
+var Calender = require('./Calender');
 
 var {
     AppRegistry,
@@ -15,7 +17,7 @@ class LiftHeavy extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedTab: 'featured'
+            selectedTab: 'home'
         };
     }
 
@@ -23,24 +25,44 @@ class LiftHeavy extends Component {
         return (
             <TabBarIOS selectedTab={this.state.selectedTab}>
                 <TabBarIOS.Item
-                    selected={this.state.selectedTab === 'featured'}
-                    icon={{uri:'featured'}}
+                    selected={this.state.selectedTab === 'home'}
+                    icon={{uri:'home'}}
                     onPress={() => {
                         this.setState({
-                            selectedTab: 'featured'
+                            selectedTab: 'home'
                         });
                     }}>
-                    <Featured/>
+                    <Home/>
                 </TabBarIOS.Item>
                 <TabBarIOS.Item
-                    selected={this.state.selectedTab === 'search'}
-                    icon={{uri:'search'}}
+                    selected={this.state.selectedTab === 'history'}
+                    icon={{uri:'history'}}
                     onPress={() => {
                         this.setState({
-                            selectedTab: 'search'
+                            selectedTab: 'history'
                         });
                     }}>
-                    <Search/>
+                    <History/>
+                </TabBarIOS.Item>
+                <TabBarIOS.Item
+                    selected={this.state.selectedTab === 'graph'}
+                    icon={{uri:'graph'}}
+                    onPress={() => {
+                        this.setState({
+                            selectedTab: 'graph'
+                        });
+                    }}>
+                    <Graph/>
+                </TabBarIOS.Item>
+                <TabBarIOS.Item
+                    selected={this.state.selectedTab === 'calender'}
+                    icon={{uri:'calender'}}
+                    onPress={() => {
+                        this.setState({
+                            selectedTab: 'calender'
+                        });
+                    }}>
+                    <Calender/>
                 </TabBarIOS.Item>
             </TabBarIOS>
         );
