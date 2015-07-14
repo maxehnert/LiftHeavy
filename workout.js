@@ -19,6 +19,12 @@ var styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 10,
 
+  },
+  circleButton: {
+    height: 20,
+    width: 20,
+    borderRadius: '50%',
+    backgroundColor: 'blue'
   }
 });
 
@@ -41,6 +47,7 @@ class Workout extends Component{
   ** On the top should be a Nav bar with a back arrow, Date, and Hamburger
   ** Timer pops up after a lift circle has been pressed
   */
+  /*
   renderBook(book) {
    return (
      <TouchableHighlight onPress={() => this.showBookDetail(book)} underlayColor='#dddddd'>
@@ -59,6 +66,7 @@ class Workout extends Component{
         </TouchableHighlight>
      );
   }
+  */
 
   renderLift() {
     return (
@@ -70,24 +78,10 @@ class Workout extends Component{
 
             <TouchableHighlight onPress={() => this.repCount(num)} underlayColor='red'>
               <Image
-                source={{NO IDEA YET, I JUST NEED TO MAKE A CIRCLE WITH NUMBER IN IT}} />
+
+                style={styles.circleButton} />
             </TouchableHighlight>
-            <TouchableHighlight onPress={() => this.repCount(num)} underlayColor='red'>
-              <Image
-                source={{NO IDEA YET}} />
-            </TouchableHighlight>
-            <TouchableHighlight onPress={() => this.repCount(num)} underlayColor='red'>
-              <Image
-                source={{NO IDEA YET}} />
-            </TouchableHighlight>
-            <TouchableHighlight onPress={() => this.repCount(num)} underlayColor='red'>
-              <Image
-                source={{NO IDEA YET}} />
-            </TouchableHighlight>
-            <TouchableHighlight onPress={() => this.repCount(num)} underlayColor='red'>
-              <Image
-                source={{NO IDEA YET}} />
-            </TouchableHighlight>
+
           </View>
           <TouchableHighlight onPress={() => this.Save(workout)}>Finish</TouchableHighlight>
         </View>
