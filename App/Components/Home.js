@@ -6,6 +6,8 @@ var React = require('react-native');
 var {
     StyleSheet,
     NavigatorIOS,
+    View,
+    Text,
     Component
    } = React;
 
@@ -18,14 +20,13 @@ var styles = StyleSheet.create({
 class Home extends Component {
     render() {
         return (
-            <NavigatorIOS
-                style={styles.container}
-                initialRoute={{
-            title: 'Featured Books',
-            component: Workout
-            }}/>
+            <View>
+              <Text>
+                I'm some text
+              </Text>
+            </View>
         );
     }
-}
+};
 
 module.exports = Home;

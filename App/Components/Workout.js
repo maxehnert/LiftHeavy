@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react-native');
-
+var LiftPane = require('./Sub-Components/LiftPane');
 var {
   StyleSheet,
   Text,
@@ -11,7 +11,7 @@ var {
   View,
   TouchableHighlight,
   ActivityIndicatorIOS
-  }
+} = React;
 
 var styles = StyleSheet.create({
   container: {
@@ -20,12 +20,12 @@ var styles = StyleSheet.create({
     padding: 10,
 
   },
-  circleButton: {
-    height: 20,
-    width: 20,
-    borderRadius: '50%',
-    backgroundColor: 'blue'
-  }
+  // circleButton: {
+  //   height: 20,
+  //   width: 20,
+  //   borderRadius: '50%',
+  //   backgroundColor: 'blue'
+  // }
 });
 
 class Workout extends Component{
@@ -33,8 +33,9 @@ class Workout extends Component{
           return (
     	    <View style={styles.container}>
   	        <Text >
-          	  Search Tab
+          	  Workout Tab
   	        </Text>
+            <LiftPane/>
   	    </View>
           );
       }
@@ -54,6 +55,8 @@ class Workout extends Component{
   ** At the botton of this 'form' should be an option to 'add and exercise' (wait on this until I have something working first) and a 'Finish' button
   ** On the top should be a Nav bar with a back arrow, Date, and Hamburger
   ** Timer pops up after a lift circle has been pressed
+
+  At the top of the view will be what workout it is
   */
 
   /*
