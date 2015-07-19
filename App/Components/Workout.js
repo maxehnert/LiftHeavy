@@ -29,16 +29,24 @@ var styles = StyleSheet.create({
 });
 
 class Workout extends Component{
-
-  constructor(props) {
-      super(props);
-      this.state = {
-        isLoading: true,
-        dataSource: new ListView.DataSource({
-          rowHasChanged: (row1, row2) => row1 !== row2
-        })
-      };
-  }
+  render() {
+          return (
+    	    <View style={styles.container}>
+  	        <Text >
+          	  Search Tab
+  	        </Text>
+  	    </View>
+          );
+      }
+  // constructor(props) {
+  //     super(props);
+  //     this.state = {
+  //       isLoading: true,
+  //       dataSource: new ListView.DataSource({
+  //         rowHasChanged: (row1, row2) => row1 !== row2
+  //       })
+  //     };
+  // }
 
   /*
   ** For the render section I want 4 rows of different lifts
@@ -47,6 +55,7 @@ class Workout extends Component{
   ** On the top should be a Nav bar with a back arrow, Date, and Hamburger
   ** Timer pops up after a lift circle has been pressed
   */
+
   /*
   renderBook(book) {
    return (
@@ -68,26 +77,26 @@ class Workout extends Component{
   }
   */
 
-  renderLift() {
-    return (
-      <View>
-        <View style={styles.container}>
-          <View style={styles.liftSection}>
-            <Text style={styles.liftName}>Squat</Text>
-            <TextInput keyboardType='numeric' />
-
-            <TouchableHighlight onPress={() => this.repCount(num)} underlayColor='red'>
-              <Image
-
-                style={styles.circleButton} />
-            </TouchableHighlight>
-
-          </View>
-          <TouchableHighlight onPress={() => this.Save(workout)}>Finish</TouchableHighlight>
-        </View>
-      </View>
-    );
-  }
+  // renderLift() {
+  //   return (
+  //     <View>
+  //       <View style={styles.container}>
+  //         <View style={styles.liftSection}>
+  //           <Text style={styles.liftName}>Squat</Text>
+  //           <TextInput keyboardType='numeric' />
+  //
+  //           <TouchableHighlight onPress={() => this.repCount(num)} underlayColor='red'>
+  //             <Image
+  //
+  //               style={styles.circleButton} />
+  //           </TouchableHighlight>
+  //
+  //         </View>
+  //         <TouchableHighlight onPress={() => this.Save(workout)}>Finish</TouchableHighlight>
+  //       </View>
+  //     </View>
+  //   );
+  // }
   /*
   ** This section not used yet, but will be to load old workouts into the view and have it fill in the set circles
   **

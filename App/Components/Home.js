@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react-native');
-var Workout = require('./Workout');
+//var Workout = require('./Workout');
 
 var {
     StyleSheet,
