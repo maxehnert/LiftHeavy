@@ -36,7 +36,7 @@ class LiftPane extends Component {
 
             }}
             underlayColor="#88D4F5">
-            <Text> Woot {type}</Text>
+            <Text> {type} </Text>
           </TouchableHighlight>
           </View>
         </View>
