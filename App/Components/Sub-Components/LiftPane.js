@@ -1,16 +1,36 @@
 'use strict';
 
 var React = require('react-native');
+var Separator = require('./Separator');
 
 var {
   View,
   Text,
   TouchableHighlight,
-  Component
+  Component,
+  StyleSheet
 } = React;
 
-class LiftPane extends Component {
+var styles = StyleSheet.create({
+  workoutType: {
+    flex: 1,
+    padding: 30,
+    marginTop: 65,
+    flexDirection: 'column',
+    //justifyContent: 'center',
+    backgroundColor: '#48BBEC'
+  },
+  circleButton: {
+     height: 30,
+     width: 30,
+     borderLeftColor: 'green',
+     borderRadius: 50,
+     backgroundColor: 'blue',
+     flex: 1
+   }
+});
 
+class LiftPane extends Component {
 
   handleCount() {
     this.setState = ({
@@ -27,6 +47,7 @@ class LiftPane extends Component {
       return (
         <View key={index}>
           <View>
+            <Text style={styles.workoutType}> {type} </Text>
             <TouchableHighlight
 
             onPress={() => {
@@ -36,9 +57,10 @@ class LiftPane extends Component {
 
             }}
             underlayColor="#88D4F5">
-            <Text> {type} </Text>
+            <Text style={styles.circleButton}> &#43; </Text>
           </TouchableHighlight>
           </View>
+          <Separator />
         </View>
       )
     });
