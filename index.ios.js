@@ -66,6 +66,7 @@ class LiftHeavy extends Component {
            }}>
            {this.renderContent('#783E33', 'Red History Tab')}
          </TabBarIOS.Item>
+
          <TabBarIOS.Item
            systemIcon="more"
            selected={this.state.selectedTab === 'greenTab'}

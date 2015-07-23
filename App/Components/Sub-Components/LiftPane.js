@@ -31,12 +31,27 @@ var styles = StyleSheet.create({
 });
 
 class LiftPane extends Component {
+  constructor(props) {
+    super(props);
 
-  handleCount() {
+    this.state = {
+      presses: 0
+    }
+  };
+
+  handleCount(presses) {
     this.setState = ({
-      presses: 5
+      presses: this.state.presses
     })
-  }
+  };
+
+  renderContent(color: string, pageText: string) {
+    return (
+      <View style={[styles.tabContent, {backgroundColor: color}]}>
+        <Text style={styles.tabText}>{pageText}</Text>
+      </View>
+    );
+  };
 
   render() {
 
@@ -52,13 +67,14 @@ class LiftPane extends Component {
 
             onPress={() => {
               this.setState({
-                presses: this.state.presses > 1
+                presses: this.state.presses + 1
               });
 
             }}
             underlayColor="#88D4F5">
             <Text style={styles.circleButton}> &#43; </Text>
           </TouchableHighlight>
+          {this.renderContent('#783E33', '+ Tab')}
           </View>
           <Separator />
         </View>
