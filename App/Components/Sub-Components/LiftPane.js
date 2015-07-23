@@ -39,16 +39,16 @@ class LiftPane extends Component {
     }
   };
 
-  handleCount(presses) {
+  handlePress(presses) {
     this.setState = ({
       presses: this.state.presses
     })
   };
 
-  renderContent(color: string, pageText: string) {
+  renderContent(color: string, presses: integer) {
     return (
       <View style={[styles.tabContent, {backgroundColor: color}]}>
-        <Text style={styles.tabText}>{pageText}</Text>
+        <Text style={styles.tabText}>{presses}</Text>
       </View>
     );
   };
@@ -69,12 +69,11 @@ class LiftPane extends Component {
               this.setState({
                 presses: this.state.presses + 1
               });
-
             }}
             underlayColor="#88D4F5">
             <Text style={styles.circleButton}> &#43; </Text>
           </TouchableHighlight>
-          {this.renderContent('#783E33', '+ Tab')}
+          {this.renderContent('#783E33', this.state.presses)}
           </View>
           <Separator />
         </View>
