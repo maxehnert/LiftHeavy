@@ -16,23 +16,23 @@ var {
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
     padding: 10,
 
   },
-  // circleButton: {
-  //   height: 20,
-  //   width: 20,
-  //   borderRadius: '50%',
-  //   backgroundColor: 'blue'
-  // }
+  workoutTitle: {
+    flex: 1,
+      alignSelf: 'center',
+      paddingTop: 15,
+      fontSize: 20
+  }
 });
 
 class Workout extends Component{
   render() {
           return (
     	    <View style={styles.container}>
-  	        <Text >
+  	        <Text style={styles.workoutTitle}>
           	  Workout Tab
   	        </Text>
             <LiftPane/>
