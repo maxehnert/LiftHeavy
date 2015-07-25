@@ -16,8 +16,8 @@ var styles = StyleSheet.create({
     flex: 1,
     padding: 30,
     marginTop: 65,
-    flexDirection: 'column',
-    //justifyContent: 'center',
+    flexDirection: 'row',
+    alignSelf: 'center',
     backgroundColor: '#48BBEC'
   },
   circleButton: {
@@ -39,16 +39,19 @@ class LiftPane extends Component {
     }
   };
 
-  handlePress(presses) {
-    this.setState = ({
-      presses: this.state.presses
-    })
+  handlePress(presses: integer) {
+    presses: this.state.presses + 1
+    return (
+      <View>
+        <Text> {presses}</Text>
+      </View>
+    )
   };
 
   renderContent(color: string, presses: integer) {
     return (
-      <View style={[styles.tabContent, {backgroundColor: color}]}>
-        <Text style={styles.tabText}>{presses}</Text>
+      <View style={[ {backgroundColor: color}]}>
+        <Text >{presses}</Text>
       </View>
     );
   };
@@ -65,15 +68,13 @@ class LiftPane extends Component {
             <Text style={styles.workoutType}> {type} </Text>
             <TouchableHighlight
 
-            onPress={() => {
-              this.setState({
-                presses: this.state.presses + 1
-              });
-            }}
+
+            onPress={this.handlePress.bind(this)}
             underlayColor="#88D4F5">
             <Text style={styles.circleButton}> &#43; </Text>
           </TouchableHighlight>
           {this.renderContent('#783E33', this.state.presses)}
+          {this.handlePress}
           </View>
           <Separator />
         </View>
@@ -88,4 +89,9 @@ class LiftPane extends Component {
   }
 };
 
+// onPress={() => {
+//   this.setState({
+//     presses: this.state.presses + 1
+//   });
+// }}
 module.exports = LiftPane;
